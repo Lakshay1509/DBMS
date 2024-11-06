@@ -1,6 +1,7 @@
 import express from 'express';
 import pg from 'pg';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 
 
@@ -12,6 +13,13 @@ const port = 5000 || process.env.PORT;
 
 dotenv.config({
     path : '.env'
+})
+
+app.use(cors())
+
+cors({
+    origin: '*',
+    credentials: true,
 })
 
 
